@@ -1,0 +1,93 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "index.html"
+        label: "Page d'accueil"
+        name: "homepage"
+        fields:
+          - {label: "Titre principal", name: "hero_title", widget: "string", default: "Votre site web créé gratuitement pour votre salon de coiffure"}
+          - {label: "Sous-titre", name: "hero_subtitle", widget: "text", default: "Un site pro et optimisé SEO qui attire de nouveaux clients. Jusqu'à 17% de réservations en plus, sans effort."}
+          - {label: "Texte du bouton CTA", name: "cta_text", widget: "string", default: "Créer mon site gratuitement"}
+          - {label: "Badge", name: "badge_text", widget: "string", default: "✨ Agence #1 pour salons de coiffure"}
+          - {label: "Titre section offres", name: "offers_title", widget: "string", default: "Nos offres sur mesure"}
+          - {label: "Sous-titre section offres", name: "offers_subtitle", widget: "text", default: "Des solutions complètes pour faire grandir votre salon"}
+
+  - name: "testimonials"
+    label: "Témoignages"
+    folder: "content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nom", name: "name", widget: "string"}
+      - {label: "Salon", name: "salon", widget: "string"}
+      - {label: "Ville", name: "city", widget: "string"}
+      - {label: "Témoignage", name: "testimonial", widget: "text"}
+      - {label: "Note", name: "rating", widget: "number", min: 1, max: 5, default: 5}
+      - {label: "Photo", name: "photo", widget: "image", required: false}
+
+  - name: "case_studies"
+    label: "Études de cas"
+    folder: "content/case-studies"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Salon", name: "salon_name", widget: "string"}
+      - {label: "Ville", name: "city", widget: "string"}
+      - {label: "Propriétaire", name: "owner", widget: "string"}
+      - {label: "Résultat", name: "result", widget: "string"}
+      - {label: "Description avant", name: "before_description", widget: "text"}
+      - {label: "Description après", name: "after_description", widget: "text"}
+      - {label: "Image avant", name: "before_image", widget: "image"}
+      - {label: "Image après", name: "after_image", widget: "image"}
+      - {label: "Témoignage", name: "testimonial", widget: "text"}
+
+  - name: "offers"
+    label: "Offres"
+    folder: "content/offers"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nom de l'offre", name: "name", widget: "string"}
+      - {label: "Prix", name: "price", widget: "string"}
+      - {label: "Période", name: "period", widget: "string", default: "par mois"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Fonctionnalités", name: "features", widget: "list", field: {label: "Fonctionnalité", name: "feature", widget: "string"}}
+      - {label: "Bouton CTA", name: "cta_text", widget: "string", default: "Choisir cette offre"}
+      - {label: "Populaire", name: "popular", widget: "boolean", default: false}
+      - {label: "Couleur", name: "color", widget: "select", options: ["gold", "green", "blue", "purple"], default: "gold"}
+
+  - name: "team"
+    label: "Équipe"
+    folder: "content/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nom", name: "name", widget: "string"}
+      - {label: "Poste", name: "position", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Photo", name: "photo", widget: "image"}
+      - {label: "Email", name: "email", widget: "string"}
+      - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
+
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Auteur", name: "author", widget: "string"}
+      - {label: "Image de couverture", name: "cover_image", widget: "image"}
+      - {label: "Résumé", name: "excerpt", widget: "text"}
+      - {label: "Contenu", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list", field: {label: "Tag", name: "tag", widget: "string"}}
