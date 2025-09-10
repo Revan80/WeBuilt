@@ -1,0 +1,2910 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeBuilt - Sites web pour salons de coiffure | Attirez plus de clients</title>
+    <meta name="description" content="Agence web spécialisée dans la création de sites pour salons de coiffure. Attirez plus de clients avec un site professionnel et optimisé SEO.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Neue Machina + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Neue Machina Font -->
+    <style>
+        @font-face {
+            font-family: 'Neue Machina';
+            src: url('https://fonts.cdnfonts.com/css/neue-machina') format('woff2'),
+                 url('https://fonts.cdnfonts.com/css/neue-machina') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Neue Machina';
+            src: url('https://fonts.cdnfonts.com/css/neue-machina') format('woff2'),
+                 url('https://fonts.cdnfonts.com/css/neue-machina') format('woff');
+            font-weight: 500;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Neue Machina';
+            src: url('https://fonts.cdnfonts.com/css/neue-machina') format('woff2'),
+                 url('https://fonts.cdnfonts.com/css/neue-machina') format('woff');
+            font-weight: 600;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Neue Machina';
+            src: url('https://fonts.cdnfonts.com/css/neue-machina') format('woff2'),
+                 url('https://fonts.cdnfonts.com/css/neue-machina') format('woff');
+            font-weight: 700;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Neue Machina';
+            src: url('https://fonts.cdnfonts.com/css/neue-machina') format('woff2'),
+                 url('https://fonts.cdnfonts.com/css/neue-machina') format('woff');
+            font-weight: 800;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Neue Machina';
+            src: url('https://fonts.cdnfonts.com/css/neue-machina') format('woff2'),
+                 url('https://fonts.cdnfonts.com/css/neue-machina') format('woff');
+            font-weight: 900;
+            font-style: normal;
+        }
+    </style>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- Facebook Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'eggshell': '#F0EDD9',
+                        'gold': '#CFA64F',
+                        'jet': '#312D29'
+                    },
+                    fontFamily: {
+                        'title': ['Neue Machina', 'Arial', 'sans-serif'],
+                        'body': ['Neue Machina', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        
+        .gradient-gold {
+            background: linear-gradient(135deg, #CFA64F 0%, #E6C068 100%);
+        }
+        
+        .shadow-gold {
+            box-shadow: 0 10px 25px rgba(207, 166, 79, 0.2);
+        }
+        
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+        
+        .star-rating {
+            color: #FFD700;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        /* Hero Animations */
+        .hero-fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        
+        .hero-fade-in-delay-1 {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+        
+        .hero-fade-in-delay-2 {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+        }
+        
+        .hero-fade-in-delay-3 {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out 0.9s forwards;
+        }
+
+        /* Phone Animations */
+        .phone-float {
+            animation: phoneFloat 6s ease-in-out infinite;
+        }
+        
+        .phone-glow {
+            animation: phoneGlow 3s ease-in-out infinite alternate;
+        }
+        
+        .phone-content-slide {
+            animation: contentSlide 8s ease-in-out infinite;
+        }
+        
+        .phone-pulse {
+            animation: phonePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes phoneFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(3deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(1deg);
+            }
+        }
+        
+        @keyframes phoneGlow {
+            0% {
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(207, 166, 79, 0.4);
+            }
+            100% {
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 20px rgba(207, 166, 79, 0);
+            }
+        }
+        
+        @keyframes contentSlide {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            25% {
+                transform: translateY(-5px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            75% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        @keyframes phonePulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+        
+        .phone-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .phone-shine::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shine 4s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            50% {
+                left: 100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .floating-element {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .floating-element-delayed {
+            animation: float 3s ease-in-out infinite 1.5s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        /* Animation téléphone */
+        .animate-bounce-slow {
+            animation: phoneFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes phoneFloat {
+            0%, 100% {
+                transform: rotate(3deg) translateY(0px);
+            }
+            50% {
+                transform: rotate(3deg) translateY(-8px);
+            }
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(207, 166, 79, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(207, 166, 79, 0.6);
+            }
+        }
+        
+        .typing-animation {
+            overflow: hidden;
+            border-right: 3px solid #CFA64F;
+            white-space: nowrap;
+            animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: #CFA64F;
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #CFA64F, #E6C068, #CFA64F);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        
+        .scale-on-hover {
+            transition: transform 0.3s ease;
+        }
+        
+        .scale-on-hover:hover {
+            transform: scale(1.05);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideInLeft 1s ease-out 0.5s forwards;
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            animation: slideInRight 1s ease-out 0.7s forwards;
+        }
+        
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Hologram Portfolio Slider */
+        .hologram-slider {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .hologram-track {
+            display: flex;
+            animation: hologramSlide 20s linear infinite;
+            gap: 2rem;
+        }
+        
+        @keyframes hologramSlide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .hologram-card {
+            min-width: 280px;
+            height: 200px;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(207, 166, 79, 0.1), rgba(207, 166, 79, 0.05));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(207, 166, 79, 0.3);
+            box-shadow: 0 8px 32px rgba(207, 166, 79, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .hologram-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(207, 166, 79, 0.4);
+            border-color: rgba(207, 166, 79, 0.6);
+        }
+        
+        .hologram-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: hologramScan 3s ease-in-out infinite;
+        }
+        
+        @keyframes hologramScan {
+            0%, 100% {
+                left: -100%;
+            }
+            50% {
+                left: 100%;
+            }
+        }
+        
+        .hologram-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .hologram-card:hover .hologram-image {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .hologram-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(49, 45, 41, 0.9));
+            padding: 1rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .hologram-card:hover .hologram-overlay {
+            transform: translateY(0);
+        }
+        
+        .hologram-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .hologram-subtitle {
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+        
+        .hologram-glow {
+            position: absolute;
+            inset: -2px;
+            border-radius: 18px;
+            background: linear-gradient(45deg, #CFA64F, transparent, #CFA64F);
+            opacity: 0;
+            z-index: -1;
+            animation: hologramGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes hologramGlow {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+        
+        /* Effets Spectaculaires Carrousel */
+        .testimonial-card {
+            position: relative;
+            will-change: transform, opacity;
+        }
+        
+        .testimonial-card::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 20px;
+            background: conic-gradient(from 0deg, transparent, #CFA64F, transparent, #E6C068, transparent, #CFA64F, transparent);
+            z-index: -1;
+            opacity: 0;
+            animation: rotateBorder 3s linear infinite;
+            transition: opacity 0.3s ease;
+        }
+        
+        .testimonial-card.active::after {
+            opacity: 0.6;
+        }
+        
+        @keyframes rotateBorder {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #CFA64F;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 5;
+        }
+        
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .magic-sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #FFD700, #CFA64F);
+            border-radius: 50%;
+            animation: sparkle 2s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% {
+                transform: scale(0) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1) rotate(180deg);
+                opacity: 1;
+            }
+        }
+        
+        .testimonial-card .bg-white {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card .bg-white::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent 0deg, rgba(207, 166, 79, 0.1) 60deg, transparent 120deg);
+            animation: shimmer 4s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .testimonial-card.active .bg-white::before {
+            opacity: 1;
+        }
+        
+        @keyframes shimmer {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .holographic-text {
+            background: linear-gradient(45deg, #CFA64F, #FFD700, #CFA64F, #E6C068);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: holographicShift 2s ease-in-out infinite;
+        }
+        
+        @keyframes holographicShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        
+        .testimonial-glow {
+            position: absolute;
+            inset: -20px;
+            background: radial-gradient(circle, rgba(207, 166, 79, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0;
+            animation: pulseGlow 3s ease-in-out infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .testimonial-card.active .testimonial-glow {
+            opacity: 1;
+        }
+        
+        .morphing-shadow {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 20px;
+            background: radial-gradient(ellipse, rgba(207, 166, 79, 0.3) 0%, transparent 70%);
+            filter: blur(10px);
+            animation: morphShadow 3s ease-in-out infinite;
+        }
+        
+        @keyframes morphShadow {
+            0%, 100% {
+                transform: translateX(-50%) scaleX(1);
+            }
+            50% {
+                transform: translateX(-50%) scaleX(1.2);
+            }
+        }
+        
+        .energy-orb {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, #FFD700, #CFA64F);
+            border-radius: 50%;
+            box-shadow: 0 0 20px #CFA64F;
+            animation: orbitMotion 5s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes orbitMotion {
+            0% {
+                transform: rotate(0deg) translateX(150px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(150px) rotate(-360deg);
+            }
+        }
+        
+        .testimonial-card.active .energy-orb {
+            animation-play-state: running;
+        }
+        
+        .testimonial-card:not(.active) .energy-orb {
+            animation-play-state: paused;
+            opacity: 0.3;
+        }
+        
+        /* Écran de Chargement Artistique - Mode & Beauté */
+        .loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #F0EDD9 0%, #FEFCF3 40%, #F0EDD9 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+        
+        .loader-overlay.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .beauty-mirror {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(145deg, #FFFFFF, #F0EDD9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            box-shadow: 
+                0 0 30px rgba(207, 166, 79, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.8),
+                inset 0 0 40px rgba(207, 166, 79, 0.1);
+            animation: mirrorGlow 3s ease-in-out infinite;
+            position: relative;
+            border: 3px solid rgba(207, 166, 79, 0.3);
+        }
+        
+        .beauty-mirror::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, rgba(207, 166, 79, 0.3), transparent, rgba(207, 166, 79, 0.6), transparent);
+            animation: mirrorRotate 4s linear infinite;
+            z-index: -1;
+        }
+        
+        .beauty-mirror i {
+            font-size: 2.5rem;
+            color: #CFA64F;
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes mirrorGlow {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 
+                    0 0 30px rgba(207, 166, 79, 0.2),
+                    inset 0 0 20px rgba(255, 255, 255, 0.8),
+                    inset 0 0 40px rgba(207, 166, 79, 0.1);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 
+                    0 0 50px rgba(207, 166, 79, 0.4),
+                    inset 0 0 25px rgba(255, 255, 255, 0.9),
+                    inset 0 0 50px rgba(207, 166, 79, 0.2);
+            }
+        }
+        
+        @keyframes mirrorRotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes iconPulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+        
+        .beauty-text {
+            font-family: 'Neue Machina', Arial, sans-serif;
+            font-size: 2rem;
+            font-weight: 300;
+            color: #312D29;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: elegantFadeIn 1.5s ease-out 0.8s forwards;
+            letter-spacing: 3px;
+        }
+        
+        .beauty-subtext {
+            font-size: 1rem;
+            color: #312D29;
+            opacity: 0.8;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: elegantFadeIn 1.5s ease-out 1.3s forwards;
+            font-style: italic;
+            text-align: center;
+            max-width: 300px;
+        }
+        
+        @keyframes elegantFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+        
+        .beauty-progress {
+            width: 250px;
+            height: 2px;
+            background: rgba(207, 166, 79, 0.15);
+            border-radius: 1px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .beauty-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #CFA64F, #E6C068, #D4AF37);
+            border-radius: 1px;
+            width: 0%;
+            animation: elegantProgress 3s ease-out forwards;
+            position: relative;
+        }
+        
+        .beauty-progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            animation: progressShimmer 2s ease-in-out infinite;
+        }
+        
+        @keyframes elegantProgress {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+        
+        @keyframes progressShimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        
+        .beauty-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .beauty-element {
+            position: absolute;
+            opacity: 0.6;
+            animation: beautifulFloat 6s ease-in-out infinite;
+        }
+        
+        .beauty-element.scissors {
+            font-size: 1.5rem;
+            color: #CFA64F;
+            top: 15%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+        
+        .beauty-element.brush {
+            font-size: 1.3rem;
+            color: #D4AF37;
+            top: 25%;
+            right: 15%;
+            animation-delay: 1.5s;
+        }
+        
+        .beauty-element.mirror {
+            font-size: 1.2rem;
+            color: #CFA64F;
+            bottom: 30%;
+            left: 15%;
+            animation-delay: 3s;
+        }
+        
+        .beauty-element.star {
+            font-size: 1rem;
+            color: #E6C068;
+            bottom: 20%;
+            right: 20%;
+            animation-delay: 4.5s;
+        }
+        
+        .beauty-element.heart {
+            font-size: 0.9rem;
+            color: #CFA64F;
+            top: 40%;
+            left: 10%;
+            animation-delay: 2s;
+        }
+        
+        .beauty-element.sparkle {
+            font-size: 0.8rem;
+            color: #D4AF37;
+            top: 60%;
+            right: 25%;
+            animation-delay: 3.5s;
+        }
+        
+        @keyframes beautifulFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.3;
+            }
+            25% {
+                transform: translateY(-15px) rotate(5deg);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(-8px) rotate(-3deg);
+                opacity: 0.6;
+            }
+            75% {
+                transform: translateY(-20px) rotate(8deg);
+                opacity: 0.8;
+            }
+        }
+        
+        .loading-message {
+            font-size: 0.85rem;
+            color: #312D29;
+            opacity: 0.6;
+            margin-top: 1rem;
+            opacity: 0;
+            animation: elegantFadeIn 1s ease-out 2s forwards;
+            font-style: italic;
+        }
+        
+        /* Séparateur Mèche de Cheveux Animé */
+        .hair-strand-separator {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hair-strand-separator svg {
+            width: 250px;
+            height: 50px;
+            opacity: 0.4;
+            filter: drop-shadow(0 2px 6px rgba(207, 166, 79, 0.15));
+            animation: hairStrandFloat 4s ease-in-out infinite;
+        }
+        
+        .hair-strand-separator svg path {
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+            animation: hairStrandDraw 3s ease-out forwards, hairStrandShimmer 2s ease-in-out infinite 3s;
+        }
+        
+        .hair-strand-separator svg path:nth-child(2) {
+            animation-delay: 0.3s, 3.3s;
+        }
+        
+        .hair-strand-separator svg path:nth-child(3) {
+            animation-delay: 0.6s, 3.6s;
+        }
+        
+        @keyframes hairStrandFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+        
+        @keyframes hairStrandDraw {
+            0% {
+                stroke-dashoffset: 300;
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            100% {
+                stroke-dashoffset: 0;
+                opacity: 1;
+            }
+        }
+        
+        @keyframes hairStrandShimmer {
+            0%, 100% {
+                opacity: 0.4;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        
+        .hair-strand-separator.top {
+            margin-bottom: 3rem;
+            margin-top: 0;
+        }
+        
+        .hair-strand-separator.bottom {
+            margin-top: 3rem;
+            margin-bottom: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .hair-strand-separator svg {
+                width: 350px;
+                height: 60px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .hair-strand-separator svg {
+                width: 450px;
+                height: 70px;
+            }
+        }
+        
+        /* Timeline Flow Animations */
+        .timeline-step {
+            opacity: 0;
+            transform: scale(0.8);
+            animation: timelineStepIn 0.8s ease-out forwards;
+        }
+        
+        .timeline-step:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        
+        .timeline-step:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        
+        .timeline-step:nth-child(5) {
+            animation-delay: 1s;
+        }
+        
+        @keyframes timelineStepIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        .timeline-arrow {
+            opacity: 0;
+            animation: arrowDraw 1s ease-out forwards;
+        }
+        
+        .timeline-arrow:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        
+        .timeline-arrow:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+        
+        @keyframes arrowDraw {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .timeline-circle {
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-circle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Effet Atelier / Plan de Travail */
+        .workshop-section {
+            background: 
+                linear-gradient(135deg, #F8F6F0 0%, #FEFCF3 50%, #F8F6F0 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="wood-grain" patternUnits="userSpaceOnUse" width="100" height="20"><rect width="100" height="20" fill="%23F8F6F0"/><path d="M0 5 Q25 3, 50 5 T100 5" stroke="%23CFA64F" stroke-width="0.2" opacity="0.1"/><path d="M0 10 Q30 8, 60 10 T100 10" stroke="%23CFA64F" stroke-width="0.15" opacity="0.08"/><path d="M0 15 Q20 13, 40 15 T100 15" stroke="%23CFA64F" stroke-width="0.1" opacity="0.06"/></pattern></defs><rect width="100" height="100" fill="url(%23wood-grain)"/></svg>');
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .workshop-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(207, 166, 79, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(207, 166, 79, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .workshop-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(207, 166, 79, 0.1);
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            position: relative;
+        }
+        
+        .workshop-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, rgba(207, 166, 79, 0.1), transparent, rgba(207, 166, 79, 0.1));
+            border-radius: inherit;
+            z-index: -1;
+        }
+        
+        .workshop-tools {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0.3;
+        }
+        
+        .workshop-tool {
+            width: 20px;
+            height: 20px;
+            background: #CFA64F;
+            border-radius: 4px;
+            position: relative;
+            animation: toolFloat 3s ease-in-out infinite;
+        }
+        
+        .workshop-tool:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .workshop-tool:nth-child(2) {
+            animation-delay: 0.5s;
+            background: #E6C068;
+        }
+        
+        .workshop-tool:nth-child(3) {
+            animation-delay: 1s;
+            background: #D4AF37;
+        }
+        
+        @keyframes toolFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-3px) rotate(2deg);
+            }
+        }
+        
+        .sketch-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+        
+        .sketch-line {
+            position: absolute;
+            background: #CFA64F;
+            height: 1px;
+            animation: sketchDraw 2s ease-out infinite;
+        }
+        
+        .sketch-line:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            width: 30%;
+            animation-delay: 0s;
+        }
+        
+        .sketch-line:nth-child(2) {
+            top: 40%;
+            right: 15%;
+            width: 25%;
+            animation-delay: 0.7s;
+        }
+        
+        .sketch-line:nth-child(3) {
+            bottom: 30%;
+            left: 20%;
+            width: 20%;
+            animation-delay: 1.4s;
+        }
+        
+        @keyframes sketchDraw {
+            0% {
+                width: 0%;
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.3;
+            }
+            100% {
+                width: var(--line-width);
+                opacity: 0.1;
+            }
+        }
+        
+        .workshop-paper {
+            background: 
+                linear-gradient(90deg, transparent 0%, rgba(207, 166, 79, 0.02) 50%, transparent 100%),
+                repeating-linear-gradient(90deg, transparent 0%, transparent 98%, rgba(207, 166, 79, 0.05) 100%);
+            position: relative;
+        }
+        
+        .workshop-paper::after {
+            content: '';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 3px;
+            height: 3px;
+            background: #CFA64F;
+            border-radius: 50%;
+            box-shadow: 
+                20px 0 #CFA64F,
+                40px 0 #CFA64F,
+                0 20px #CFA64F,
+                20px 20px #CFA64F,
+                40px 20px #CFA64F;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+
+<body class="bg-eggshell font-body text-jet">
+    
+    <!-- Écran de Chargement Artistique - Mode & Beauté -->
+    <div class="loader-overlay" id="loader">
+        <!-- Éléments beauté flottants (masqués sur mobile) -->
+        <div class="beauty-elements hidden md:block">
+            <div class="beauty-element scissors">
+                <i class="fas fa-cut"></i>
+            </div>
+            <div class="beauty-element brush">
+                <i class="fas fa-paint-brush"></i>
+            </div>
+            <div class="beauty-element mirror">
+                <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <div class="beauty-element star">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="beauty-element heart">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div class="beauty-element sparkle">
+                <i class="fas fa-sparkles"></i>
+            </div>
+        </div>
+        
+        <!-- Miroir de beauté central -->
+        <div class="beauty-mirror">
+            <i class="fas fa-cut"></i>
+        </div>
+        
+        <!-- Textes élégants (masqués sur mobile) -->
+        <div class="beauty-text hidden md:block">WeBuilt</div>
+        <div class="beauty-subtext hidden md:block">L'art de sublimer votre salon en ligne</div>
+        
+        <!-- Barre de progression élégante -->
+        <div class="beauty-progress">
+            <div class="beauty-progress-bar"></div>
+        </div>
+        
+        <!-- Message de chargement -->
+        <div class="loading-message">Création de votre expérience...</div>
+    </div>
+    
+    <!-- Header Navigation -->
+    <nav class="bg-white/95 backdrop-blur-sm shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <img src="images/logo.jpg" alt="WeBuilt Logo" class="h-16 w-auto">
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-jet hover:text-gold transition-colors">Services</a>
+                    <a href="#portfolio" class="text-jet hover:text-gold transition-colors">Portfolio</a>
+                    <a href="#temoignages" class="text-jet hover:text-gold transition-colors">Témoignages</a>
+                    <a href="#contact" class="bg-gold text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-all">Contact</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-jet">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-3 space-y-1">
+                <a href="#services" class="block px-3 py-2 text-jet hover:text-gold">Tarifs</a>
+                <a href="#portfolio" class="block px-3 py-2 text-jet hover:text-gold">Portfolio</a>
+                <a href="#temoignages" class="block px-3 py-2 text-jet hover:text-gold">Témoignages</a>
+                <a href="#contact" class="block px-3 py-2 text-jet hover:text-gold">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 relative overflow-hidden" style="background: linear-gradient(135deg, #FEFCF3 0%, #F8F6F0 50%, #FEFCF3 100%); background-image: radial-gradient(circle at 20% 30%, rgba(207, 166, 79, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(207, 166, 79, 0.02) 0%, transparent 50%), url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><pattern id=\"marble\" patternUnits=\"userSpaceOnUse\" width=\"100\" height=\"100\"><circle cx=\"20\" cy=\"20\" r=\"0.5\" fill=\"%23CFA64F\" opacity=\"0.1\"/><circle cx=\"80\" cy=\"40\" r=\"0.3\" fill=\"%23CFA64F\" opacity=\"0.08\"/><circle cx=\"50\" cy=\"70\" r=\"0.4\" fill=\"%23CFA64F\" opacity=\"0.06\"/></pattern></defs><rect width=\"100\" height=\"100\" fill=\"url(%23marble)\"/></svg>
+        <!-- Éléments décoratifs artistiques (masqués sur mobile) -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
+            <!-- Arabesques dorées -->
+            <svg class="absolute top-10 left-10 w-32 h-32 text-gold/10 floating-element" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M20,50 Q30,30 50,50 Q70,70 80,50 Q90,30 95,50" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.6"/>
+                <path d="M10,40 Q25,20 40,40 Q55,60 70,40" stroke="currentColor" stroke-width="0.3" fill="none" opacity="0.4"/>
+            </svg>
+            
+            <!-- Motifs organiques -->
+            <svg class="absolute top-1/4 right-16 w-24 h-24 text-gold/8 floating-element-delayed" viewBox="0 0 100 100" fill="currentColor">
+                <ellipse cx="50" cy="30" rx="15" ry="8" opacity="0.3"/>
+                <ellipse cx="30" cy="60" rx="12" ry="6" opacity="0.2"/>
+                <ellipse cx="70" cy="70" rx="10" ry="5" opacity="0.4"/>
+            </svg>
+            
+            
+            <!-- Formes artistiques -->
+            <div class="absolute top-1/2 right-1/4 w-16 h-16 floating-element-delayed">
+                <svg viewBox="0 0 100 100" class="text-gold/5">
+                    <path d="M50,10 Q80,30 90,50 Q80,70 50,90 Q20,70 10,50 Q20,30 50,10 Z" fill="currentColor" opacity="0.4"/>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <!-- Colonne texte - centrée sur mobile, alignée à gauche sur desktop -->
+                <div class="text-center lg:text-left mx-auto lg:ml-0 lg:pl-0 max-w-2xl lg:max-w-none">
+                    <!-- Badge centré sur mobile -->
+                    <div class="hero-fade-in mb-6">
+                        <div class="inline-block px-4 py-2 bg-gold/10 rounded-full text-gold font-semibold text-sm">
+                            ✨ Agence #1 pour salons de coiffure
+                        </div>
+                    </div>
+                    
+                    <!-- Titre centré sur mobile, aligné à gauche sur desktop -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-title font-bold text-jet mb-6 leading-tight hero-fade-in-delay-1 text-center lg:text-left">
+                        Votre site web créé gratuitement, optimisé pour attirer vos premiers clients
+                    </h1>
+                    
+                    <!-- Sous-texte centré sur mobile, aligné à gauche sur desktop -->
+                    <p class="text-xl text-jet/80 mb-8 leading-relaxed hero-fade-in-delay-2 text-center lg:text-left">
+                        Un site pro et optimisé SEO qui vous apporte  <strong class="text-gold pulse-glow px-2 py-1 rounded">jusqu'à 17% en moyenne</strong> de réservations en plus, sans effort.
+                    </p>
+                    
+                    <!-- CTA centré sur mobile -->
+                    <div class="mb-8 hero-fade-in-delay-3 text-center lg:text-left">
+                        <a href="https://facebook.com/webuilt8" target="_blank" class="group relative overflow-hidden bg-white text-jet px-8 py-4 rounded-2xl text-base font-semibold transition-all duration-300 transform hover:-translate-y-1 inline-flex items-center border-2 border-gold/30 hover:border-gold shadow-md hover:shadow-lg backdrop-blur-sm">
+                            <!-- Fond subtil au hover -->
+                            <div class="absolute inset-0 bg-gradient-to-r from-gold/5 to-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                            
+                            <div class="relative flex items-center space-x-3">
+                                <span class="text-jet group-hover:text-gold transition-colors duration-300">Obtenez votre site gratuit</span>
+                                <!-- Flèche subtile -->
+                                <svg class="w-4 h-4 text-gold transform group-hover:translate-x-1 transition-all duration-300 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Features centrées sur mobile, alignées à gauche sur desktop -->
+                    <div class="flex items-center justify-center lg:justify-start flex-wrap gap-6 text-sm text-jet/70 slide-in-left">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-gold mr-2"></i>
+                            <span>Setup en 7 jours</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-gold mr-2"></i>
+                            <span>Support WhatsApp</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Colonne visuel - parfaitement équilibrée -->
+                <div class="relative hero-fade-in-delay-2 flex items-center justify-center lg:justify-end">
+                    <!-- Mockup smartphone avec site de salon -->
+                    <div class="relative group max-w-xs mx-auto">
+                        <!-- Smartphone frame avec animations -->
+                        <div class="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-[2.5rem] p-2 shadow-2xl phone-float phone-glow w-72 h-[580px] hover:rotate-1 transition-all duration-500">
+                            <!-- Écran du smartphone -->
+                            <div class="bg-black rounded-[2rem] p-1 h-full">
+                                <div class="bg-white rounded-[1.5rem] overflow-hidden shadow-inner h-full flex flex-col phone-shine">
+                                    <!-- Barre de statut smartphone -->
+                                    <div class="bg-white px-4 py-2 flex items-center justify-between text-xs text-gray-800">
+                                        <div class="flex items-center space-x-1">
+                                            <span class="font-medium">9:41</span>
+                                        </div>
+                                        <div class="flex items-center space-x-1">
+                                            <div class="flex space-x-1">
+                                                <div class="w-1 h-1 bg-gray-800 rounded-full"></div>
+                                                <div class="w-1 h-1 bg-gray-800 rounded-full"></div>
+                                                <div class="w-1 h-1 bg-gray-800 rounded-full"></div>
+                                                <div class="w-1 h-1 bg-gray-400 rounded-full"></div>
+                                            </div>
+                                            <div class="w-6 h-3 border border-gray-800 rounded-sm">
+                                                <div class="w-4 h-2 bg-green-500 rounded-sm m-0.5"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Barre d'adresse mobile -->
+                                    <div class="bg-gray-50 px-3 py-2 border-b flex items-center">
+                                        <div class="flex-1 bg-white rounded-full px-3 py-1 text-xs text-gray-500 text-center">
+                                            salon-elegance.fr
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Contenu du site mobile avec animations -->
+                                    <div class="flex-1 p-4 bg-gradient-to-br from-cream to-white overflow-hidden phone-content-slide">
+                                        <!-- Header mobile du site -->
+                                        <div class="flex items-center justify-between mb-4">
+                                            <div class="flex items-center space-x-2">
+                                                <div class="w-6 h-6 bg-gold rounded-full flex items-center justify-center phone-pulse">
+                                                    <i class="fas fa-cut text-white text-xs"></i>
+                                                </div>
+                                                <h3 class="font-bold text-gold text-sm">Salon Élégance</h3>
+                                            </div>
+                                            <div class="w-6 h-6 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-colors duration-300">
+                                                <i class="fas fa-bars text-jet text-sm hover:text-gold transition-colors duration-300"></i>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Hero mobile du site -->
+                                        <div class="text-center mb-4">
+                                            <h4 class="text-lg font-bold text-gold mb-2">Coiffure & Beauté</h4>
+                                            <p class="text-gold text-xs mb-3">Votre style, notre passion</p>
+                                        </div>
+                                        
+                                        <!-- Services en colonne mobile avec animation décalée -->
+                                        <div class="space-y-2 mb-4">
+                                            <div class="bg-white/90 p-3 rounded-lg border border-gold/20 flex items-center space-x-3" style="animation-delay: 0.5s;">
+                                                <div class="w-4 h-4 bg-gold/30 rounded phone-pulse"></div>
+                                                <div class="flex-1">
+                                                    <h5 class="text-xs font-semibold text-jet">Coupe & Styling</h5>
+                                                    <p class="text-xs text-jet/60">À partir de 35€</p>
+                                                </div>
+                                            </div>
+                                            <div class="bg-white/90 p-3 rounded-lg border border-gold/20 flex items-center space-x-3" style="animation-delay: 1s;">
+                                                <div class="w-4 h-4 bg-gold/30 rounded phone-pulse"></div>
+                                                <div class="flex-1">
+                                                    <h5 class="text-xs font-semibold text-jet">Coloration</h5>
+                                                    <p class="text-xs text-jet/60">À partir de 55€</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- CTA button mobile avec animation -->
+                                        <div class="bg-gold text-white text-center py-3 rounded-xl text-sm font-semibold shadow-lg phone-pulse hover:bg-gold/80 hover:shadow-xl hover:scale-105 transition-all duration-300">
+                                            📱 Réserver maintenant
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Barre de navigation mobile (home indicator) -->
+                                    <div class="bg-white pb-2 flex justify-center">
+                                        <div class="w-32 h-1 bg-gray-300 rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Éléments décoratifs autour du mockup (masqués sur mobile) -->
+                        <div class="hidden md:block absolute -top-4 -right-4 w-20 h-20 bg-gold/10 rounded-full blur-xl"></div>
+                        <div class="hidden md:block absolute -bottom-6 -left-6 w-32 h-32 bg-gold/5 rounded-full blur-2xl"></div>
+                        
+                        <!-- Indicateurs de performance -->
+                        <div class="absolute -right-8 top-1/4 bg-white rounded-xl p-4 shadow-lg border border-gold/20 transform translate-x-4 opacity-90 hover:opacity-100 transition-all">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-gold mb-1">+17%</div>
+                                <div class="text-xs text-jet/70">Réservations</div>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute -left-8 bottom-1/4 bg-white rounded-xl p-4 shadow-lg border border-gold/20 transform -translate-x-4 opacity-90 hover:opacity-100 transition-all">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-green-600 mb-1">24/7</div>
+                                <div class="text-xs text-jet/70">Disponible</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hologram Portfolio Slider -->
+            <div class="mt-20 hero-fade-in-delay-3">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-title font-bold text-jet mb-2">
+                        Nos <span class="gradient-text">réalisations</span>
+                    </h3>
+                    <p class="text-jet/70">Découvrez quelques sites que nous avons créés</p>
+                </div>
+                
+                <div class="hologram-slider">
+                    <div class="hologram-track">
+                        <!-- Portfolio Item 1 -->
+                        <div class="hologram-card">
+                            <div class="hologram-glow"></div>
+                            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Salon Élégance" class="hologram-image">
+                            <div class="hologram-overlay">
+                                <div class="hologram-title">Salon Élégance</div>
+                                <div class="hologram-subtitle">Site Premium • Paris</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Portfolio Item 2 -->
+                        <div class="hologram-card">
+                            <div class="hologram-glow"></div>
+                            <img src="https://images.unsplash.com/photo-1562004760-aceed7bb0fe3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Barbershop Modern" class="hologram-image">
+                            <div class="hologram-overlay">
+                                <div class="hologram-title">Barbershop Modern</div>
+                                <div class="hologram-subtitle">Site Standard • Marseille</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Portfolio Item 3 -->
+                        <div class="hologram-card">
+                            <div class="hologram-glow"></div>
+                            <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Salon Tendance" class="hologram-image">
+                            <div class="hologram-overlay">
+                                <div class="hologram-title">Salon Tendance</div>
+                                <div class="hologram-subtitle">Site Premium • Lyon</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Portfolio Item 4 -->
+                        <div class="hologram-card">
+                            <div class="hologram-glow"></div>
+                            <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Coiffure Zen" class="hologram-image">
+                            <div class="hologram-overlay">
+                                <div class="hologram-title">Coiffure Zen</div>
+                                <div class="hologram-subtitle">Site Standard • Toulouse</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Portfolio Item 5 -->
+                        <div class="hologram-card">
+                            <div class="hologram-glow"></div>
+                            <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Hair Studio" class="hologram-image">
+                            <div class="hologram-overlay">
+                                <div class="hologram-title">Hair Studio</div>
+                                <div class="hologram-subtitle">Site Essentiel • Nice</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Portfolio Item 6 -->
+                        <div class="hologram-card">
+                            <div class="hologram-glow"></div>
+                            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Salon Prestige" class="hologram-image">
+                            <div class="hologram-overlay">
+                                <div class="hologram-title">Salon Prestige</div>
+                                <div class="hologram-subtitle">Site Premium • Bordeaux</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Portfolio Item 7 - Nouveau -->
+                        <div class="hologram-card">
+                            <div class="hologram-glow"></div>
+                            <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Beauty Lounge" class="hologram-image">
+                            <div class="hologram-overlay">
+                                <div class="hologram-title">Beauty Lounge</div>
+                                <div class="hologram-subtitle">Site Premium • Cannes</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Portfolio Item 8 - Nouveau -->
+                        <div class="hologram-card">
+                            <div class="hologram-glow"></div>
+                            <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Salon Moderne" class="hologram-image">
+                            <div class="hologram-overlay">
+                                <div class="hologram-title">Salon Moderne</div>
+                                <div class="hologram-subtitle">Site Standard • Lille</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Répétition pour l'effet infini -->
+                        <div class="hologram-card">
+                            <div class="hologram-glow"></div>
+                            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Salon Élégance" class="hologram-image">
+                            <div class="hologram-overlay">
+                                <div class="hologram-title">Salon Élégance</div>
+                                <div class="hologram-subtitle">Site Premium • Paris</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hologram-card">
+                            <div class="hologram-glow"></div>
+                            <img src="https://images.unsplash.com/photo-1562004760-aceed7bb0fe3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Barbershop Modern" class="hologram-image">
+                            <div class="hologram-overlay">
+                                <div class="hologram-title">Barbershop Modern</div>
+                                <div class="hologram-subtitle">Site Standard • Marseille</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hologram-card">
+                            <div class="hologram-glow"></div>
+                            <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Salon Tendance" class="hologram-image">
+                            <div class="hologram-overlay">
+                                <div class="hologram-title">Salon Tendance</div>
+                                <div class="hologram-subtitle">Site Premium • Lyon</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hologram-card">
+                            <div class="hologram-glow"></div>
+                            <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Coiffure Zen" class="hologram-image">
+                            <div class="hologram-overlay">
+                                <div class="hologram-title">Coiffure Zen</div>
+                                <div class="hologram-subtitle">Site Standard • Toulouse</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Indicateur de scroll animé -->
+            <div class="text-center mt-16 hero-fade-in-delay-3">
+                <div class="inline-flex flex-col items-center">
+                    <span class="text-sm text-jet/60 mb-2">Découvrez nos services</span>
+                    <div class="w-6 h-10 border-2 border-gold rounded-full flex justify-center">
+                        <div class="w-1 h-3 bg-gold rounded-full mt-2 floating-element"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Pricing Section - Effet d'ancrage -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-title font-bold text-jet mb-6">
+                    Nos offres <span class="text-gold">sur mesure</span>
+                </h2>
+                <p class="text-xl text-jet/80 max-w-3xl mx-auto">
+                    Choisissez la solution qui correspond à vos ambitions. Tous nos sites sont responsive, optimisés SEO et incluent un suivi personnalisé.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Formule 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-200 hover-lift flex flex-col h-full">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-title font-bold text-jet mb-2">Essentielle</h3>
+                        <div class="mb-4">
+                            <span class="text-5xl font-bold text-jet">29,99€</span>
+                        </div>
+                        <p class="text-jet/80">1 page</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8 text-jet flex-grow">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Chef de projet dédié</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Support illimité</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Mesure de vos résultats</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Création / refonte de 10 pages</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Design unique</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Outil de modifications facile</span>
+                        </li>
+                    </ul>
+                    
+                    <button onclick="scrollToSection('contact')" class="w-full border-2 border-gold text-gold py-4 rounded-full font-semibold text-lg hover:bg-gold hover:text-white transition-all mt-auto">
+                        Choisir cette offre
+                    </button>
+                </div>
+                
+                <!-- Formule 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-200 hover-lift relative flex flex-col h-full">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                        Plus populaire
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-title font-bold text-jet mb-2">Standard</h3>
+                        <div class="mb-4">
+                            <span class="text-5xl font-bold text-jet">49,99€</span>
+                        </div>
+                        <p class="text-jet/80">1-10 pages</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8 text-jet flex-grow">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Chef de projet expert en référencement</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Support illimité</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Mesure de vos résultats</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Création / refonte de 10 pages</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Design unique</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Outil de modifications facile</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Suivi de votre position sur 10 mots clés</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Audit semestriel avec plan d'optimisation</span>
+                        </li>
+                    </ul>
+                    
+                    <button onclick="scrollToSection('contact')" class="w-full gradient-gold text-white py-4 rounded-full font-semibold text-lg hover-lift mt-auto">
+                        Choisir cette offre
+                    </button>
+                </div>
+                
+                <!-- Formule 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-200 hover-lift flex flex-col h-full">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-title font-bold text-jet mb-2">Premium</h3>
+                        <div class="mb-4">
+                            <span class="text-5xl font-bold text-jet">199,99€</span>
+                        </div>
+                        <p class="text-jet/80">10 pages et +</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8 text-jet flex-grow">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Chef de projet expert en référencement</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Support illimité</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Mesure de vos résultats</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Création / refonte de 20 pages</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Design haut de gamme</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Outil de modifications facile</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Suivi de votre position sur 15 mots clés</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Audit semestriel avec plan d'optimisation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-3 text-xl text-gold"></i>
+                            <span>Analyse de vos concurrents</span>
+                        </li>
+                    </ul>
+                    
+                    <button onclick="scrollToSection('contact')" class="w-full border-2 border-gold text-gold py-4 rounded-full font-semibold text-lg hover:bg-gold hover:text-white transition-all mt-auto">
+                        Choisir cette offre
+                    </button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-jet/70 mb-4">💡 <strong>Garantie satisfait ou remboursé 30 jours</strong></p>
+                <p class="text-sm text-jet/60">Vous pouvez nous joindre à tout moment via WhatsApp pour toute question</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials & Trust Section -->
+    <section id="temoignages" class="py-20 bg-eggshell">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-title font-bold text-jet mb-6">
+                        Ils nous font <span class="text-gold">confiance</span>
+                </h2>
+                <p class="text-xl text-jet/80">Plus de 150 salons de coiffure nous font confiance pour leur présence en ligne</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Témoignage 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80" alt="Marie Dubois" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold text-jet">Marie Dubois</h4>
+                            <p class="text-sm text-jet/70">Salon Cristal, Lyon</p>
+                        </div>
+                    </div>
+                    <div class="star-rating mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-jet/80 italic">"Depuis 3 mois avec WeBuilt, j'ai doublé mes réservations ! Le site est magnifique et mes clientes le recommandent. Service client au top !"</p>
+                </div>
+                
+                <!-- Témoignage 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" alt="Thomas Martin" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold text-jet">Thomas Martin</h4>
+                            <p class="text-sm text-jet/70">Barbershop Modern, Marseille</p>
+                        </div>
+                    </div>
+                    <div class="star-rating mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-jet/80 italic">"Équipe professionnelle et réactive. Mon site est exactement ce que je voulais. Les clients me trouvent facilement sur Google maintenant !"</p>
+                </div>
+                
+                <!-- Témoignage 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80" alt="Sophie Leroy" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold text-jet">Sophie Leroy</h4>
+                            <p class="text-sm text-jet/70">Salon Tendance, Toulouse</p>
+                        </div>
+                    </div>
+                    <div class="star-rating mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-jet/80 italic">"ROI incroyable ! En 6 mois, le site s'est payé 5 fois. Le système de réservation en ligne a révolutionné mon salon."</p>
+                </div>
+            </div>
+            
+            <!-- Stats de confiance -->
+            <div class="bg-white rounded-2xl p-8 shadow-xl">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-3xl font-title font-bold text-gold mb-2">150+</div>
+                        <p class="text-jet/80">Salons satisfaits</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-title font-bold text-gold mb-2">4.9/5</div>
+                        <p class="text-jet/80">Note Google</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-title font-bold text-gold mb-2">7j</div>
+                        <p class="text-jet/80">Mise en ligne</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-title font-bold text-gold mb-2">24/7</div>
+                        <p class="text-jet/80">Support WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-eggshell">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-title font-bold text-jet mb-6">
+                        Notre <span class="text-gold">processus</span> en 5 étapes
+                </h2>
+                <p class="text-xl text-jet/80">Un processus éprouvé pour garantir votre succès en ligne</p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gold hidden lg:block"></div>
+                
+                <div class="space-y-12">
+                    <!-- Étape 1 -->
+                    <div class="flex flex-col lg:flex-row items-center">
+                        <div class="lg:w-1/2 lg:pr-8 mb-8 lg:mb-0">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-gold text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">1</div>
+                                    <h3 class="text-xl font-title font-bold text-jet">Analyse & stratégie</h3>
+                                </div>
+                                <p class="text-jet/80 mb-4">Nous analysons votre salon, votre concurrence locale et définissons ensemble votre stratégie digitale pour vous démarquer.</p>
+                                <div class="text-sm text-gold font-semibold">✓ Audit gratuit • ✓ Étude concurrentielle • ✓ Plan d'action personnalisé</div>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 lg:pl-8">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Analyse" class="rounded-2xl shadow-lg">
+                        </div>
+                    </div>
+                    
+                    <!-- Étape 2 -->
+                    <div class="flex flex-col lg:flex-row-reverse items-center">
+                        <div class="lg:w-1/2 lg:pl-8 mb-8 lg:mb-0">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-gold text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">2</div>
+                                    <h3 class="text-xl font-title font-bold text-jet">Design sur mesure</h3>
+                                </div>
+                                <p class="text-jet/80 mb-4">Création d'un design unique qui reflète votre identité et séduit vos clients. Révisions illimitées jusqu'à validation.</p>
+                                <div class="text-sm text-gold font-semibold">✓ Maquettes HD • ✓ Révisions illimitées • ✓ Design mobile-first</div>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 lg:pr-8">
+                            <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Design" class="rounded-2xl shadow-lg">
+                        </div>
+                    </div>
+                    
+                    <!-- Étape 3 -->
+                    <div class="flex flex-col lg:flex-row items-center">
+                        <div class="lg:w-1/2 lg:pr-8 mb-8 lg:mb-0">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-gold text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">3</div>
+                                    <h3 class="text-xl font-title font-bold text-jet">Développement expert</h3>
+                                </div>
+                                <p class="text-jet/80 mb-4">Développement avec les dernières technologies pour un site rapide, sécurisé et optimisé pour les moteurs de recherche.</p>
+                                <div class="text-sm text-gold font-semibold">✓ Code propre • ✓ Performance optimisée • ✓ Sécurité renforcée</div>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 lg:pl-8">
+                            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Développement" class="rounded-2xl shadow-lg">
+                        </div>
+                    </div>
+                    
+                    <!-- Étape 4 -->
+                    <div class="flex flex-col lg:flex-row-reverse items-center">
+                        <div class="lg:w-1/2 lg:pl-8 mb-8 lg:mb-0">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-gold text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">4</div>
+                                    <h3 class="text-xl font-title font-bold text-jet">Optimisation SEO</h3>
+                                </div>
+                                <p class="text-jet/80 mb-4">Optimisation complète pour être trouvé sur Google. Configuration Google My Business et stratégie de référencement local.</p>
+                                <div class="text-sm text-gold font-semibold">✓ SEO technique • ✓ Google My Business • ✓ Mots-clés locaux</div>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 lg:pr-8">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="SEO" class="rounded-2xl shadow-lg">
+                        </div>
+                    </div>
+                    
+                    <!-- Étape 5 -->
+                    <div class="flex flex-col lg:flex-row items-center">
+                        <div class="lg:w-1/2 lg:pr-8 mb-8 lg:mb-0">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-gold text-white rounded-full flex items-center justify-center font-bold text-xl mr-4">5</div>
+                                    <h3 class="text-xl font-title font-bold text-jet">Suivi & optimisation</h3>
+                                </div>
+                                <p class="text-jet/80 mb-4">Suivi mensuel des performances, rapports détaillés et optimisations continues pour maximiser vos résultats.</p>
+                                <div class="text-sm text-gold font-semibold">✓ Rapports mensuels • ✓ Support continu • ✓ Optimisations régulières</div>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 lg:pl-8">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Suivi" class="rounded-2xl shadow-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <div class="bg-white p-8 rounded-2xl shadow-lg inline-block">
+                    <h3 class="text-2xl font-title font-bold text-jet mb-4">Résultat garanti</h3>
+                    <p class="text-jet/80 mb-6">En moyenne, nos clients voient une augmentation de <strong class="text-gold">40% de leurs réservations</strong> dans les 3 premiers mois.</p>
+                    <button onclick="scrollToSection('contact')" class="gradient-gold text-white px-8 py-4 rounded-full font-semibold text-lg hover-lift">
+                        Commencer maintenant
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="py-20 workshop-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-title font-bold text-jet mb-6">
+                        Étude de cas : <span class="text-gold">Salon Élégance</span>
+                </h2>
+                <p class="text-xl text-jet/80">Comment nous avons transformé un salon en difficulté en success story</p>
+                
+                <!-- Outils d'atelier flottants -->
+                <div class="workshop-tools">
+                    <div class="workshop-tool"></div>
+                    <div class="workshop-tool"></div>
+                    <div class="workshop-tool"></div>
+                </div>
+            </div>
+            
+            <div class="workshop-card rounded-3xl p-8 lg:p-12 shadow-2xl workshop-paper">
+                <!-- Timeline Flow Visuel -->
+                <div class="flex items-center justify-center mb-12">
+                    <div class="flex items-center space-x-4 lg:space-x-8">
+                        <!-- Étape 1: Situation initiale -->
+                        <div class="flex flex-col items-center timeline-step">
+                            <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white font-bold mb-2 shadow-lg timeline-circle">
+                                😟
+                            </div>
+                            <span class="text-xs text-jet/70 text-center font-medium">Avant</span>
+                        </div>
+                        
+                        <!-- Flèche 1 -->
+                        <div class="hidden sm:block timeline-arrow">
+                            <svg width="40" height="20" viewBox="0 0 40 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 10 Q15 5, 25 10 T35 10" stroke="#CFA64F" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                <path d="M30 7 L35 10 L30 13" stroke="#CFA64F" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Étape 2: Solution -->
+                        <div class="flex flex-col items-center timeline-step">
+                            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-white font-bold mb-2 shadow-lg timeline-circle">
+                                💡
+                            </div>
+                            <span class="text-xs text-jet/70 text-center font-medium">Solution</span>
+                        </div>
+                        
+                        <!-- Flèche 2 -->
+                        <div class="hidden sm:block timeline-arrow">
+                            <svg width="40" height="20" viewBox="0 0 40 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 10 Q15 5, 25 10 T35 10" stroke="#CFA64F" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                <path d="M30 7 L35 10 L30 13" stroke="#CFA64F" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Étape 3: Résultats -->
+                        <div class="flex flex-col items-center timeline-step">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold mb-2 shadow-lg timeline-circle">
+                                🚀
+                            </div>
+                            <span class="text-xs text-jet/70 text-center font-medium">Résultats</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lignes de sketch d'atelier -->
+                <div class="sketch-lines">
+                    <div class="sketch-line w-1/3"></div>
+                    <div class="sketch-line w-1/4"></div>
+                    <div class="sketch-line w-1/5"></div>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
+                    <div class="relative">
+                        <!-- Outils de travail -->
+                        <div class="absolute -top-2 -right-2 flex space-x-1 opacity-20">
+                            <i class="fas fa-pencil-alt text-gold text-sm"></i>
+                            <i class="fas fa-ruler text-gold text-sm"></i>
+                            <i class="fas fa-cut text-gold text-sm"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-title font-bold text-jet mb-6">La situation initiale 😟</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-times text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-jet">Site web obsolète</h4>
+                                    <p class="text-jet/70">Site créé en 2018, non responsive, très lent</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-times text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-jet">Visibilité Google inexistante</h4>
+                                    <p class="text-jet/70">Aucun référencement, invisible sur les recherches locales</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-times text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-jet">Baisse de clientèle</h4>
+                                    <p class="text-jet/70">-30% de clients en 2 ans, concurrence très active</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-times text-white text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-jet">Processus de réservation archaïque</h4>
+                                    <p class="text-jet/70">Uniquement par téléphone, beaucoup d'appels perdus</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center relative">
+                        <!-- Post-it style -->
+                        <div class="bg-red-100 p-8 rounded-2xl relative transform rotate-1 shadow-lg">
+                            <!-- Punaise -->
+                            <div class="absolute -top-2 -right-2 w-4 h-4 bg-red-400 rounded-full shadow-sm"></div>
+                            <div class="text-4xl mb-4">📉</div>
+                            <h4 class="text-xl font-bold text-red-600 mb-2">Résultats avant</h4>
+                            <div class="space-y-2 text-red-700">
+                                <p><strong>0</strong> visite web/mois</p>
+                                <p><strong>5</strong> nouveaux clients/mois</p>
+                                <p><strong>0%</strong> de visibilité Google</p>
+                                <p><strong>20%</strong> d'appels perdus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gold/20 pt-12 relative">
+                    <!-- Ligne de construction -->
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gold/30 rounded-full"></div>
+                    
+                    <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
+                        <div class="relative">
+                            <!-- Outils de conception -->
+                            <div class="absolute -top-2 -left-2 flex space-x-1 opacity-20">
+                                <i class="fas fa-lightbulb text-gold text-sm"></i>
+                                <i class="fas fa-drafting-compass text-gold text-sm"></i>
+                                <i class="fas fa-palette text-gold text-sm"></i>
+                            </div>
+                            
+                            <h3 class="text-2xl font-title font-bold text-jet mb-6">Notre solution 💡</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="w-6 h-6 bg-gold rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="fas fa-check text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-jet">Site web moderne et responsive</h4>
+                                        <p class="text-jet/70">Design élégant, optimisé mobile, temps de chargement < 2s</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-6 h-6 bg-gold rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="fas fa-check text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-jet">SEO local agressif</h4>
+                                        <p class="text-jet/70">Optimisation Google My Business, mots-clés locaux, avis clients</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-6 h-6 bg-gold rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="fas fa-check text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-jet">Système de réservation en ligne</h4>
+                                        <p class="text-jet/70">Réservation 24/7, notifications automatiques, gestion simplifiée</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-6 h-6 bg-gold rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="fas fa-check text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-jet">Stratégie de contenu</h4>
+                                        <p class="text-jet/70">Galerie avant/après, conseils beauté, actualités du salon</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center relative">
+                            <!-- Post-it style solution -->
+                            <div class="bg-green-100 p-8 rounded-2xl relative transform -rotate-1 shadow-lg">
+                                <!-- Punaise -->
+                                <div class="absolute -top-2 -left-2 w-4 h-4 bg-green-400 rounded-full shadow-sm"></div>
+                                <div class="text-4xl mb-4">🚀</div>
+                                <h4 class="text-xl font-bold text-green-600 mb-2">Résultats après 6 mois</h4>
+                                <div class="space-y-2 text-green-700">
+                                    <p><strong>2,500</strong> visites web/mois</p>
+                                    <p><strong>32</strong> nouveaux clients/mois</p>
+                                    <p><strong>85%</strong> de visibilité Google</p>
+                                    <p><strong>60%</strong> réservations en ligne</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gold/10 p-8 rounded-2xl text-center relative transform rotate-0.5 shadow-lg">
+                    <!-- Éléments d'atelier -->
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 flex space-x-2 opacity-30">
+                        <div class="w-2 h-2 bg-gold rounded-full"></div>
+                        <div class="w-2 h-2 bg-gold rounded-full"></div>
+                        <div class="w-2 h-2 bg-gold rounded-full"></div>
+                    </div>
+                    
+                    <h4 class="text-2xl font-title font-bold text-jet mb-4">Résultat final</h4>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <div class="text-3xl font-bold text-gold mb-2">+540%</div>
+                            <p class="text-jet/80">Augmentation du trafic web</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-gold mb-2">+64%</div>
+                            <p class="text-jet/80">Nouveaux clients</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-gold mb-2">+80%</div>
+                            <p class="text-jet/80">Chiffre d'affaires</p>
+                        </div>
+                    </div>
+                    <p class="text-jet/70 mt-6 italic">"En 6 mois, WeBuilt a complètement transformé mon salon. Je recommande vivement !" - Marie, Salon Élégance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 bg-eggshell">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-title font-bold text-jet mb-6">
+                        Prêt à <span class="text-gold">transformer</span> votre salon ?
+                </h2>
+                <p class="text-xl text-jet/80">Obtenez votre devis gratuit en 2 minutes. Réponse garantie sous 24h.</p>
+            </div>
+            
+            <div class="bg-white rounded-3xl shadow-2xl p-8 lg:p-12">
+                <form class="space-y-6" onsubmit="handleFormSubmit(event)">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="nom" class="block text-sm font-semibold text-jet mb-2">Nom du salon *</label>
+                            <input type="text" id="nom" name="nom" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all">
+                        </div>
+                        <div>
+                            <label for="proprietaire" class="block text-sm font-semibold text-jet mb-2">Votre nom *</label>
+                            <input type="text" id="proprietaire" name="proprietaire" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-jet mb-2">Email *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all">
+                        </div>
+                        <div>
+                            <label for="telephone" class="block text-sm font-semibold text-jet mb-2">Téléphone *</label>
+                            <input type="tel" id="telephone" name="telephone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="ville" class="block text-sm font-semibold text-jet mb-2">Ville du salon *</label>
+                        <input type="text" id="ville" name="ville" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all">
+                    </div>
+                    
+                    <div>
+                        <label for="offre" class="block text-sm font-semibold text-jet mb-2">Offre qui vous intéresse</label>
+                        <select id="offre" name="offre" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all">
+                            <option value="">Sélectionnez une offre</option>
+                            <option value="premium">Premium - 195€/mois</option>
+                            <option value="standard">Standard - 49€/mois</option>
+                            <option value="essentiel">Essentiel - 19€/mois</option>
+                            <option value="sur-mesure">Solution sur mesure</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-semibold text-jet mb-2">Parlez-nous de votre projet</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all" placeholder="Décrivez votre salon, vos objectifs, vos questions..."></textarea>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <input type="checkbox" id="rgpd" name="rgpd" required class="mt-1 mr-3">
+                        <label for="rgpd" class="text-sm text-jet/70">J'accepte que mes données soient utilisées pour me recontacter concernant ma demande. <a href="#" class="text-gold hover:underline">Politique de confidentialité</a></label>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="gradient-gold text-white px-12 py-4 rounded-full text-lg font-semibold shadow-gold hover-lift">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Envoyer ma Demande
+                        </button>
+                        <p class="text-sm text-jet/60 mt-4">Réponse garantie sous 24h • Devis 100% gratuit</p>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="text-center mt-12">
+                <div class="bg-white p-6 rounded-2xl shadow-lg inline-block">
+                    <h3 class="font-title font-bold text-jet mb-2">Besoin d'aide ?</h3>
+                    <p class="text-jet/80 mb-4">Notre équipe est disponible pour répondre à toutes vos questions</p>
+                    <div class="flex items-center justify-center space-x-6">
+                        <a href="tel:+33123456789" class="flex items-center text-jet hover:text-gold transition-colors">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span>01 23 45 67 89</span>
+                        </a>
+                        <a href="mailto:contact@webuilt8.fr" class="flex items-center text-jet hover:text-gold transition-colors">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>contact@webuilt8.fr</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-jet text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="images/logo.jpg" alt="WeBuilt Logo" class="h-16 w-auto">
+                    </div>
+                    <p class="text-white/80 mb-4">L'agence web spécialisée dans la création de sites pour salons de coiffure.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white/80 hover:text-gold transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white/80 hover:text-gold transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white/80 hover:text-gold transition-colors">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="#services" class="hover:text-gold transition-colors">Création de sites web</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Référencement SEO</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Google My Business</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Maintenance & Support</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Ressources</h3>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="#portfolio" class="hover:text-gold transition-colors">Portfolio</a></li>
+                        <li><a href="#temoignages" class="hover:text-gold transition-colors">Témoignages</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-gold transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-white/80">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3"></i>
+                            <span>01 23 45 67 89</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>contact@webuilt8.fr</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-whatsapp mr-3"></i>
+                            <span>Support WhatsApp 24/7</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 pt-8 text-center text-white/60">
+                <p>&copy; 2024 WeBuilt. Tous droits réservés. | <a href="#" class="hover:text-gold transition-colors">Mentions légales</a> | <a href="#" class="hover:text-gold transition-colors">Politique de confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/33123456789?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20vos%20services%20pour%20mon%20salon%20de%20coiffure" target="_blank" class="whatsapp-float bg-green-500 text-white w-16 h-16 rounded-full shadow-2xl hover:bg-green-600 transition-all hover-lift flex items-center justify-center">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll function
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Track conversion
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+            }
+            
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'generate_lead', {
+                    'currency': 'EUR',
+                    'value': 49
+                });
+            }
+            
+            // Show success message
+            alert('Merci pour votre demande ! Nous vous recontactons sous 24h.');
+            
+            // Here you would typically send the data to your server
+            console.log('Form data:', data);
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Carrousel 3D Témoignages - Logique principale
+        class TestimonialCarousel {
+            constructor() {
+                this.currentSlide = 0;
+                this.totalSlides = 5;
+                this.autoplayInterval = null;
+                this.isPlaying = true;
+                this.touchStartX = 0;
+                this.touchEndX = 0;
+                
+                this.init();
+            }
+            
+            init() {
+                // Éléments DOM
+                this.carousel = document.getElementById('testimonial-carousel');
+                this.cards = document.querySelectorAll('.testimonial-card');
+                this.indicators = document.querySelectorAll('.indicator');
+                
+                // Event listeners
+                this.attachEventListeners();
+                
+                // Démarrage autoplay
+                this.startAutoplay();
+                
+                // Navigation clavier
+                this.setupKeyboardNavigation();
+            }
+            
+            attachEventListeners() {
+                // Indicateurs
+                this.indicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => this.goToSlide(index));
+                });
+                
+                // Pause au survol (desktop uniquement)
+                if (!this.isMobile()) {
+                    this.carousel.addEventListener('mouseenter', () => this.pauseAutoplay());
+                    this.carousel.addEventListener('mouseleave', () => this.startAutoplay());
+                }
+                
+                // Support tactile (mobile)
+                this.carousel.addEventListener('touchstart', (e) => this.handleTouchStart(e));
+                this.carousel.addEventListener('touchmove', (e) => this.handleTouchMove(e));
+                this.carousel.addEventListener('touchend', () => this.handleTouchEnd());
+            }
+            
+            // Navigation clavier (A11y)
+            setupKeyboardNavigation() {
+                document.addEventListener('keydown', (e) => {
+                    if (!this.carousel.contains(document.activeElement)) return;
+                    
+                    switch(e.key) {
+                        case 'ArrowLeft':
+                            e.preventDefault();
+                            this.prevSlide();
+                            break;
+                        case 'ArrowRight':
+                            e.preventDefault();
+                            this.nextSlide();
+                            break;
+                    }
+                });
+            }
+            
+            // Calcul des positions 3D
+            updateSlidePositions() {
+                this.cards.forEach((card, index) => {
+                    const position = this.getSlidePosition(index);
+                    card.style.transform = position.transform;
+                    card.style.opacity = position.opacity;
+                    card.style.zIndex = position.zIndex;
+                    
+                    // Gestion des classes active pour les effets spectaculaires
+                    if (index === this.currentSlide) {
+                        card.classList.add('active');
+                        this.triggerSpectacularEffects(card);
+                    } else {
+                        card.classList.remove('active');
+                    }
+                });
+                
+                this.updateIndicators();
+            }
+            
+            // Effets spectaculaires lors du changement de slide
+            triggerSpectacularEffects(activeCard) {
+                // Création de particules dynamiques
+                this.createParticles(activeCard);
+                
+                // Effet de transition avec éclat
+                this.createTransitionFlash();
+                
+                // Vibration subtile du container
+                this.carousel.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    this.carousel.style.transform = 'scale(1)';
+                }, 150);
+            }
+            
+            // Création de particules dynamiques
+            createParticles(card) {
+                const particleCount = 8;
+                const cardRect = card.getBoundingClientRect();
+                
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    
+                    // Position aléatoire autour de la carte
+                    const angle = (360 / particleCount) * i;
+                    const radius = 100;
+                    const x = Math.cos(angle * Math.PI / 180) * radius;
+                    const y = Math.sin(angle * Math.PI / 180) * radius;
+                    
+                    particle.style.left = `${50 + (x / 3)}%`;
+                    particle.style.top = `${50 + (y / 3)}%`;
+                    particle.style.animation = `particleFloat 2s ease-out forwards`;
+                    particle.style.animationDelay = `${i * 0.1}s`;
+                    
+                    card.appendChild(particle);
+                    
+                    // Nettoyage après animation
+                    setTimeout(() => {
+                        if (particle.parentNode) {
+                            particle.parentNode.removeChild(particle);
+                        }
+                    }, 2200);
+                }
+            }
+            
+            // Effet flash de transition
+            createTransitionFlash() {
+                const flash = document.createElement('div');
+                flash.style.cssText = `
+                    position: absolute;
+                    inset: -50px;
+                    background: radial-gradient(circle, rgba(207, 166, 79, 0.3) 0%, transparent 70%);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    z-index: 20;
+                    animation: flashEffect 0.6s ease-out forwards;
+                `;
+                
+                // Ajout de l'animation flash
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes flashEffect {
+                        0% { opacity: 0; transform: scale(0.5); }
+                        50% { opacity: 1; transform: scale(1.2); }
+                        100% { opacity: 0; transform: scale(2); }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                this.carousel.appendChild(flash);
+                
+                setTimeout(() => {
+                    if (flash.parentNode) {
+                        flash.parentNode.removeChild(flash);
+                    }
+                    if (style.parentNode) {
+                        style.parentNode.removeChild(style);
+                    }
+                }, 600);
+            }
+            
+            getSlidePosition(index) {
+                const diff = index - this.currentSlide;
+                
+                if (diff === 0) {
+                    // Carte active (centre)
+                    return {
+                        transform: 'translateX(0%) scale(1) rotateY(0deg) translateZ(0px)',
+                        opacity: '1',
+                        zIndex: '10'
+                    };
+                } else if (diff === 1 || (diff === -(this.totalSlides - 1))) {
+                    // Carte suivante (droite)
+                    return {
+                        transform: 'translateX(100%) scale(0.95) rotateY(6deg) translateZ(-10px)',
+                        opacity: '0.85',
+                        zIndex: '5'
+                    };
+                } else if (diff === -1 || (diff === this.totalSlides - 1)) {
+                    // Carte précédente (gauche)
+                    return {
+                        transform: 'translateX(-100%) scale(0.95) rotateY(-6deg) translateZ(-10px)',
+                        opacity: '0.85',
+                        zIndex: '5'
+                    };
+                } else if (diff > 1 || diff <= -(this.totalSlides - 2)) {
+                    // Cartes lointaines (droite)
+                    return {
+                        transform: 'translateX(200%) scale(0.9) rotateY(12deg) translateZ(-20px)',
+                        opacity: '0',
+                        zIndex: '1'
+                    };
+                } else {
+                    // Cartes lointaines (gauche)
+                    return {
+                        transform: 'translateX(-200%) scale(0.9) rotateY(-12deg) translateZ(-20px)',
+                        opacity: '0',
+                        zIndex: '1'
+                    };
+                }
+            }
+            
+            // Navigation
+            nextSlide() {
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.updateSlidePositions();
+            }
+            
+            prevSlide() {
+                this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.updateSlidePositions();
+            }
+            
+            goToSlide(index) {
+                this.currentSlide = index;
+                this.updateSlidePositions();
+            }
+            
+            // Indicateurs
+            updateIndicators() {
+                this.indicators.forEach((indicator, index) => {
+                    if (index === this.currentSlide) {
+                        indicator.classList.remove('bg-gold/30');
+                        indicator.classList.add('bg-gold');
+                    } else {
+                        indicator.classList.remove('bg-gold');
+                        indicator.classList.add('bg-gold/30');
+                    }
+                });
+            }
+            
+            // Autoplay
+            startAutoplay() {
+                if (!this.isPlaying) return;
+                this.autoplayInterval = setInterval(() => this.nextSlide(), 5000);
+            }
+            
+            pauseAutoplay() {
+                if (this.autoplayInterval) {
+                    clearInterval(this.autoplayInterval);
+                    this.autoplayInterval = null;
+                }
+            }
+            
+            // Support tactile
+            handleTouchStart(e) {
+                this.touchStartX = e.touches[0].clientX;
+                this.pauseAutoplay();
+            }
+            
+            handleTouchMove(e) {
+                e.preventDefault(); // Empêche le scroll
+            }
+            
+            handleTouchEnd() {
+                this.touchEndX = event.changedTouches[0].clientX;
+                this.handleSwipe();
+                this.startAutoplay();
+            }
+            
+            handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = this.touchStartX - this.touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        this.nextSlide(); // Swipe gauche = suivant
+                    } else {
+                        this.prevSlide(); // Swipe droite = précédent
+                    }
+                }
+            }
+            
+            // Détection mobile
+            isMobile() {
+                return window.innerWidth <= 768 || 'ontouchstart' in window;
+            }
+        }
+
+        // Gestionnaire d'écran de chargement
+        class LoaderManager {
+            constructor() {
+                this.loader = document.getElementById('loader');
+                this.minLoadTime = 2000; // Durée minimale d'affichage (2s)
+                this.startTime = Date.now();
+                this.init();
+            }
+            
+            init() {
+                // Masquer le contenu initialement
+                document.body.style.overflow = 'hidden';
+                
+                // Attendre que tout soit chargé
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', () => this.handleLoad());
+                } else {
+                    this.handleLoad();
+                }
+                
+                // Sécurité : masquer le loader après 5s max
+                setTimeout(() => this.hideLoader(), 5000);
+            }
+            
+            handleLoad() {
+                // Attendre les images et autres ressources
+                window.addEventListener('load', () => {
+                    const elapsedTime = Date.now() - this.startTime;
+                    const remainingTime = Math.max(0, this.minLoadTime - elapsedTime);
+                    
+                    // Attendre le temps minimum puis masquer
+                    setTimeout(() => this.hideLoader(), remainingTime);
+                });
+                
+                // Si les ressources prennent trop de temps, masquer quand même
+                setTimeout(() => this.hideLoader(), this.minLoadTime);
+            }
+            
+            hideLoader() {
+                if (!this.loader) return;
+                
+                // Animation de sortie
+                this.loader.classList.add('fade-out');
+                
+                // Restaurer le scroll et supprimer l'élément
+                setTimeout(() => {
+                    document.body.style.overflow = '';
+                    if (this.loader && this.loader.parentNode) {
+                        this.loader.parentNode.removeChild(this.loader);
+                    }
+                }, 800);
+                
+                // Déclencher les animations d'entrée du contenu
+                this.triggerContentAnimations();
+            }
+            
+            triggerContentAnimations() {
+                // Déclencher les animations hero avec un léger délai
+                setTimeout(() => {
+                    const heroElements = document.querySelectorAll('.hero-fade-in, .hero-fade-in-delay-1, .hero-fade-in-delay-2, .hero-fade-in-delay-3');
+                    heroElements.forEach((el, index) => {
+                        setTimeout(() => {
+                            el.style.opacity = '1';
+                            el.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    });
+                }, 200);
+            }
+        }
+        
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialisation du loader
+            new LoaderManager();
+            
+            // Initialisation du carrousel
+            new TestimonialCarousel();
+            
+            // Animations existantes
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            const animatedElements = document.querySelectorAll('.hover-lift');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
